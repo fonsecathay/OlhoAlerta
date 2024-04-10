@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Denuncia{
+  id String @id @default(uuid())
+  title String
+  latitude String
+  longitude String
+  description String
+  createdAt DateTime @default(now())
+}
